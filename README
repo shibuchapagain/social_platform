@@ -1,0 +1,47 @@
+## SOCIAL-PLATFORM
+
+## PROJECT NAME: social-platform
+
+## Description: This api focus on social-platform CRUD operations.
+
+## INSTALLATION:
+
+1. Clone the project first.
+2. Command: yarn (To install required packages)
+3. If you have docker: then simply run this command: yarn docker.
+4. After that, project will run in 3000 port.
+
+### If you don't have docker.
+
+1. First create one .env file. (Simple change .env.example file to .env).
+2. Install required packages by this command: yarn
+3. Run this project by using: yarn dev
+
+## POSTMAN COLLECTION LINK : https://documenter.getpostman.com/view/18699271/2sA3s3HX5z
+
+### TECHNOLOGY:
+
+1. Nodejs (version: 20+)
+2. Express framework
+3. Typescript
+4. Yup for validation
+5. argon for password hash and compare.
+6. Jsonwebtoken for token.
+
+### DATABASE:
+
+1. Mondo DB database.
+
+## Explain about the api:
+
+-> In this social-platform api. We have two user role
+
+1. admin
+2. user
+
+By default (user will be user Role).
+Only admin can create a category.
+
+-> After create a category, then only normal user can create an event.
+-> All user can like and comment on events.
+-> All codebase based on class based.
