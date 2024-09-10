@@ -27,10 +27,10 @@ class EventService implements ICategoryService {
   }
 
   async get(query: IGetCategorySchemaType): Promise<ICount<ICategory>> {
-    const { filterCondition, limit, page } = this.business.buildFilter(query);
-    const count = await this.categoryModel.countDocuments(filterCondition);
+    const { limit, page } = this.business.buildFilter(query);
+    const count = await this.categoryModel.countDocuments({ title: query.title });
     const data = await this.categoryModel
-      .find(filterCondition)
+      .find({ title: query.title })
       .limit(limit)
       .skip((page - 1) * limit);
 

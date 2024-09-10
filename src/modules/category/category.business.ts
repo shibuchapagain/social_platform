@@ -8,7 +8,7 @@ export default class CategoryBusiness implements ICategoryBusiness {
             title: { $regex: filters.title, $options: 'i' },
           }
         : {}),
-    };
+    } as object;
 
     const page = filters.page ? Number(filters.page) : 1;
     const limit = filters.limit ? Number(filters.limit) : 10;

@@ -62,10 +62,10 @@ class EventService implements IEventService {
   }
 
   async get(query: IEventFilter, user: IUser): Promise<ICount<IEvent>> {
-    const { filterCondition, limit, page } = this.business.buildFilter(query, user);
-    const count = await this.eventModel.countDocuments(filterCondition);
+    const { limit, page } = this.business.buildFilter(query, user);
+    const count = await this.eventModel.countDocuments();
     const data = await this.eventModel
-      .find(filterCondition)
+      .find()
       .populate({
         path: 'categoryId',
         model: 'Category',
